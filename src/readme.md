@@ -20,3 +20,19 @@
         - import './assets/font/iconfont.css'
         - <i className="iconfont icon-shouye"></i>
     3. 先快实现，后慢优化
+
+- tabbar 底栏组件
+    1. 属于App，不属于任何页面组件
+    2. Link location active
+        classname 字体也会变色（图标也属于文字）&.active{color: }
+    3. flex:1 + 内部flex-direction: column
+        外部flex：多个a标签
+        内部flex：图标 + 汉字纵向居中
+
+- 切页面之前 移动端先自适应页面
+    html fontSize 动态计算
+    document.documentElement.style.fontSize = document.documentElement.clientWidth / 3.75 + "px"
+    不要用px 用rem
+
+
+##  Link组件自动创建a标签，附带histroy功能
