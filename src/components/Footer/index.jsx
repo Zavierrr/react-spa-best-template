@@ -7,19 +7,19 @@ export default function Footer(props) {
     return (
         <FooterWrapper>
             <Link to="/home">
-                <i className="fa fa-home"></i>
+                <i className="iconfont icon-shouye"></i>
                 <span>首页</span>
             </Link>
             <Link to="/find">
-                <i className="fa fa-postcast"></i>
+                <i className="iconfont icon-faxian"></i>
                 <span>发现</span>
             </Link>
             <Link to="/order">
-                <i className="fa fa-book"></i>
+                <i className="iconfont icon-dingdan"></i>
                 <span>订单</span>
             </Link>
             <Link to="/find">
-                <i className="fa fa-user"></i>
+                <i className="iconfont icon-wode"></i>
                 <span>我的</span>
             </Link>
         </FooterWrapper>

@@ -16,3 +16,7 @@
     1. font-awesome
         方便，缺点：没有制定性
     2. iconfont 网站找，下载代码包
+        - iconfont 添加到项目 下载到本地 放入项目assets/fonts目录
+        - import './assets/font/iconfont.css'
+        - <i className="iconfont icon-shouye"></i>
+    3. 先快实现，后慢优化
