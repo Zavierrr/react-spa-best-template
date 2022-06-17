@@ -34,5 +34,24 @@
     document.documentElement.style.fontSize = document.documentElement.clientWidth / 3.75 + "px"
     不要用px 用rem
 
+- 城市选择功能
+    1. city.json 城市数据(fastmock)
+        - 缺点：每次需要重新请求数据
+        - 下一个版本使用配置文件
+            缺点：项目包有点大，启动慢
+    2. 接口都放在 api/requset 方便管理
+    3. Link to 复杂版本接受一个对象
+        {
+            pathname: '/home',
+            search: `name=${item.nm}`
+        }
+        import { useSearchParams } from 'react-router-dom'
+        const [search] = useSearchParams()
+        const cityName = search.get('name') || ''
+
+- 子组件不做数据请求，由父组件统一传过来
+    子组件不做复杂状态，用props 传过来
+
+
 
 ##  Link组件自动创建a标签，附带histroy功能
