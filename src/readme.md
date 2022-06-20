@@ -52,6 +52,67 @@
 - 子组件不做数据请求，由父组件统一传过来
     子组件不做复杂状态，用props 传过来
 
+- 幻灯片功能
+    1. 使用了swiper
+    2. 全局引用css
+    3. 固定的html 结构
+        .swiper-container > .swiper-wrapper > .swiper.slide{n} 
+        .swiper-pagination 分页 
+    4. 组件化挂在后 useEffect
+        实现幻灯片功能 new Swiper('.btn_banners')
+
+- 仿站原则与做法
+    1. 想去哪家公司就访哪家
+    2. 首页一模一样
+        但又不用完全实现
+    3. 不重要的的功能切页面
+    4. 不要让动态部分影响页面加载
+        固定高度 rem = 本身高度 / html高度
+    5. styled-components生成的类名为何是乱码？
+
+- css in js 类名逻辑
+    1. 多人协作时，类名可能发生冲突
+    2. 组件
+        - 页面级别组件
+        - npm 第三方组件
+        - 一般组件
+        - 通用组件
+        - 样式组件
+        ...
+    3. style-components 
+        生成hash 类名 绝对不冲突
+        最外层就好
+    4. 在jsx 里直接写 className="demo" 没有生成hash 类名的能力
+        styled-components 等 css in js 时，就可以
+
+- 开发套路及最优方案
+    1. 接口都放在api 目录下
+    2. 接口请求在路由级别组件发生，子组件不用去做
+    3. 子组件只负责jsx 提供和styled-components css in js
+    4. font-awesome 图标很多
+
+- 延迟加载路由组件
+    1. 引入文件，会立即执行
+    2. 只需要首页一个组件
+        如果可以少加载一点，首页打开更快
+    3. 但是 router 配置所有路由
+
+- antd-mobile 
+    antd 的移动版 手机版
+    1. NavBar
+    2. navigate(-1)
+
+- 单页应用tabbar 不显示功能开发调试
+    1. 有些二级页面
+    2. 完全匹配
+    3. 部分匹配 lastIndexOf 动态路由
+        - 正则
+            `/^(\/[\w]+)\//`
+    4. bug 过程
+        forEach来做
+            每一项都有一个执行函数，return 不会终止外部函数的运行
+            断点调试 解决
+    5. 项目记录里最好有一个断点调试说明
 
 
 ##  Link组件自动创建a标签，附带histroy功能

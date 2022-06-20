@@ -53,7 +53,7 @@ export default function Banners({ banners }) {
                 el: '.swiper-pagination'
             }
         })
-    })
+    }, [])
 
     return (
         <BannersWrapper>

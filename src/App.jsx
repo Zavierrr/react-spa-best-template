@@ -9,6 +9,7 @@ import Footer from './components/Footer'
 import Find from './pages/Find'
 import Mine from './pages/Mine'
 import Cities from './pages/Cities'
+import HomeDetail from './pages/HomeDetail'
 
 
 
@@ -25,6 +26,7 @@ function App() {
         <Route path="/order" element={<Order />}> </Route>
         <Route path="/mine" element={<Mine />}> </Route>
         <Route path="/cities" element={<Cities />}> </Route>
+        <Route path="/homedetail" element={<HomeDetail />}> </Route>
       </Routes>
       <Footer />
     </div>

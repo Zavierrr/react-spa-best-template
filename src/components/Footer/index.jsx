@@ -2,13 +2,16 @@ import React from 'react'
 import { Link, useLocation } from 'react-router-dom'
 import { FooterWrapper } from './style'
 import classname from 'classname'
+import { isPathPartlyExisted } from '../../utils'
 
 export default function Footer(props) {
     const { pathname } = useLocation()
-    if (['/cities'].indexOf(pathname) != -1) return
+    // 属于公共函数
+    // if (['/cities', '/homedatail'].indexOf(pathname) != -1) return
+    if (isPathPartlyExisted(pathname)) return;
     return (
         <FooterWrapper>
-            <Link to="/home" className={classname({ active: pathname == '/home' })}>
+            <Link to="/home" className={classname({ active: pathname == '/home' || pathname == '/' })}>
                 <i className="iconfont icon-shouye"></i>
                 <span>首页</span>
             </Link>
