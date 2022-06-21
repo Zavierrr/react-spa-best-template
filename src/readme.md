@@ -31,7 +31,7 @@
 
 - 切页面之前 移动端先自适应页面
     html fontSize 动态计算
-    document.documentElement.style.fontSize = document.documentElement.clientWidth / 3.75 + "px"
+    `document.documentElement.style.fontSize = document.documentElement.clientWidth / 3.75 + "px"`
     不要用px 用rem
 
 - 城市选择功能
@@ -59,7 +59,7 @@
         .swiper-container > .swiper-wrapper > .swiper.slide{n} 
         .swiper-pagination 分页 
     4. 组件化挂在后 useEffect
-        实现幻灯片功能 new Swiper('.btn_banners')
+        实现幻灯片功能 `new Swiper('.btn_banners')`
 
 - 仿站原则与做法
     1. 想去哪家公司就访哪家
@@ -96,6 +96,9 @@
     2. 只需要首页一个组件
         如果可以少加载一点，首页打开更快
     3. 但是 router 配置所有路由
+    4. React.lazy 延迟按需（切换路由）加载
+        `const HomeDetail = lazy(() => import('./pages/HomeDetail'))`
+            非首页 其他页面级别路由应采用按需加载
 
 - antd-mobile 
     antd 的移动版 手机版
@@ -113,6 +116,20 @@
             每一项都有一个执行函数，return 不会终止外部函数的运行
             断点调试 解决
     5. 项目记录里最好有一个断点调试说明
+
+- 工具函数库 lodash
+    跨应用实现
+    请写注释
+    上班前期多写注释 
+
+- 最佳项目模板，添加一个routes 文件夹
+    SPA 专属的
+    1. 专门处理路由，方便管理
+        routes/index.jsx 路由地图
+    2. 组件化思维，封装成组件就可以抽离，
+        以一个组件引入
+    3. 精简首页，方便管理
+        layout 没有污染首页
 
 
 ##  Link组件自动创建a标签，附带histroy功能
