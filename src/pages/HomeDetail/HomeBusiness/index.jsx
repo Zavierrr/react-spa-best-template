@@ -1,9 +1,9 @@
 import React from 'react'
 
-export default function HomeComment() {
+export default function HomeBusiness() {
   return (
     <div>
-      HomeComment
+      HomeBusiness
     </div>
   )
 }

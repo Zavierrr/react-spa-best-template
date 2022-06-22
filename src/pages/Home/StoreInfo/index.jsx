@@ -11,7 +11,8 @@ export default function StoreInfo({ restaurants }) {
                         <Link
                             className='homelist'
                             to={`/homedetail/${item.restaurant.authentic_id}`}
-                            key={item.restaurant.authentic_id}>
+                            key={item.restaurant.authentic_id}
+                        >
                             <div className="home_outBox">
                                 <div className="home_outBox_">
                                     <div className="home_insideBox-top">

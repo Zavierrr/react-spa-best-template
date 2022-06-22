@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 
 export const Wrapper = styled.div`
-    .home_info_img{
+.home_info_img{
     width:100%;
     height: 2.5rem;
     background: #fff;
@@ -51,27 +51,28 @@ export const Wrapper = styled.div`
             span:first-of-type{
                 font-size: 18px;
             }
-            }
         }
     }
-    .home_info_banners{
-        position: relative;
-        .swiper-pagination{
-            .swiper-pagination-bullet{
-                border-radius: 0;
-                height: 4px;
-            }
-        }
-        .getAptitude{
-            position: absolute;
-            height:20px;
-            bottom: 5px;
-            right: 5px;
-            z-index: 10;
-            padding:0 10px;
-            border-radius: 10px;
-            background: rgba(20, 20, 20,.7);
-            color: #fff;
+}
+.home_info_banners{
+    position: relative;
+    .swiper-pagination{
+        .swiper-pagination-bullet{
+            border-radius: 0;
+            height: 4px;
         }
     }
+    .getAptitude{
+        position: absolute;
+        height:20px;
+        bottom: 5px;
+        right: 5px;
+        z-index: 10;
+        padding:0 10px;
+        border-radius: 10px;
+        background: rgba(20, 20, 20,.7);
+        color: #fff;
+    }
+}
+
 `

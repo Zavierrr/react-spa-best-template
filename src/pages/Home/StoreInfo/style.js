@@ -1,7 +1,7 @@
-import styled from 'styled-components'
+import styled from 'styled-components';
 
 export const Wrapper = styled.div`
-     width:100%;
+ width:100%;
     padding-bottom: 60px;
     .home_loadmore{
         width:2.5rem;
@@ -19,7 +19,6 @@ export const Wrapper = styled.div`
     width:100%;
     background: white;
     padding:10px 5px;
-    }
    
     .home_insideBox-top{
         display: flex;
@@ -91,4 +90,5 @@ export const Wrapper = styled.div`
             border-radius: 2px;
         }
     }
+}
 `

@@ -1,45 +1,50 @@
 import React, { useEffect } from 'react'
-import propTypes from 'prop-types'
-import { NavLink, Navigate } from "react-router-dom";
-import Swiper from "swiper";
+// NavLink 比 Link多一个展示的下划线
+import { NavLink } from 'react-router-dom'
+// 父子传值提供保障
+import propTyes from 'prop-types'
+import Swiper from 'swiper'
 import { Wrapper } from './style'
+
 export default function HomeDetailNav({ id }) {
-    // 页面二级路由的导航配置
-    let homeNavs = [
-        { id: 1, desc: '点餐', path: '/order' },
-        { id: 2, desc: '评价', path: '/comment' },
-        { id: 3, desc: '商家', path: '/bussiness' }
-    ]
-    let swiper = null
+  // 页面二级路由的导航准备
+  let homeNavs = [
+    { id: 1, desc: '点餐', path: '/order' },
+    { id: 2, desc: '评价', path: '/comment' },
+    { id: 3, desc: '商家', path: '/business' },
+  ]
 
-    useEffect(() => {
-        if (swiper) return
-        swiper = new Swiper('.navbar')
-    }, [])
+  let swiper = null;
+  useEffect(() => {
+    if (swiper) return
+    swiper = new Swiper('.navbar')
+  }, [])
 
-    return (
-        <Wrapper>
-            <div className="navbar swiper-container">
-                <div className="nav-box swiper-wrapper">
-                    {
-                        homeNavs.map((item, index) => {
-                            return (
-                                <NavLink
-                                    index={index}
-                                    to={`/homedetail/${id}${item.path}`}
-                                    key={item.id}
-                                    className="nav-item swiper-slide">
-                                    {item.desc}
-                                </NavLink>
-                            )
-                        })
-                    }
-                </div>
-            </div>
-        </Wrapper>
-    )
+  return (
+    <Wrapper>
+      <div className="navbar swiper-container">
+        <div className="nav-box swiper-wrapper">
+          {
+            homeNavs.map((item, index) => {
+              return (
+                <NavLink
+                  index={index}
+                  to={`/homedetail/${id}${item.path}`}
+                  key={item.id}
+                  
+                  className="nav-item swiper-slide"
+                >
+                  {item.desc}
+                </NavLink>
+              )
+            })
+          }
+        </div>
+      </div>
+    </Wrapper>
+  )
 }
 
-HomeDetailNav.propTypes = {
-    id: propTypes.string.isRequired
+HomeDetailNav.propTyes = {
+  id: propTyes.string.isRequired
 }

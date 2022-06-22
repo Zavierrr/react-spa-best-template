@@ -1,3 +1,4 @@
+// css in js
 import styled from 'styled-components'
 export const Wrapper = styled.div`
  .detail-left{
@@ -207,5 +208,6 @@ export const Wrapper = styled.div`
  margin: 1vw auto 1vw;
  padding: 0;
  white-space: nowrap;
-    }}
+ }
+}
 `

@@ -1,8 +1,6 @@
 @font-face {
-  font-family: "iconfont"; /* Project id 3470334 */
-  src: url('iconfont.woff2?t=1655379673135') format('woff2'),
-       url('iconfont.woff?t=1655379673135') format('woff'),
-       url('iconfont.ttf?t=1655379673135') format('truetype');
+  font-family: "iconfont"; /* Project id  */
+  src: url('iconfont.ttf?t=1655379638108') format('truetype');
 }
 
 .iconfont {
@@ -14,7 +12,7 @@
 }
 
 .icon-shouye:before {
-  content: "\e64f";
+  content: "\e6cb";
 }
 
 .icon-dingdan:before {
