@@ -17,8 +17,10 @@
     "react-dom": "^18.0.0",
     "react-router": "^6.3.0",
     "react-router-dom": "^6.3.0",
+    "react-weui": "^1.2.3",
     "styled-components": "^5.3.5",
-    "swiper": "^4.5.0"
+    "swiper": "^4.5.0",
+    "weui": "^2.5.9"
   },
   "devDependencies": {
     "@types/react": "^18.0.0",

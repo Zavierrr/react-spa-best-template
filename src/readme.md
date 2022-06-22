@@ -7,6 +7,13 @@
     App 组件
     1. 页面级别组件共享布局方案
         header + 动态路由租价（Routes + Route path） + footer
+    2. 二级路由 layout 升级 
+        使用 <Outlet />
+        - 在路由配置中，一级路由 children
+            可以设置多个二级路由
+        - context 上下文环境
+            Route.context
+            path -> 二级路由 Order
 
 - header 组件的版本化及配置
     1. 页面中layout 固定部分，不属于页面组件的内部，属于layout
@@ -60,6 +67,11 @@
         .swiper-pagination 分页 
     4. 组件化挂在后 useEffect
         实现幻灯片功能 `new Swiper('.btn_banners')`
+    5. 遇到的问题
+        pagination 不太好用
+        Swiper 被实例化多次
+        使用useEffect 第二个参数为[] --> 执行一次
+        全局变量 swiper 实例化前判断一下是否为空
 
 - 仿站原则与做法
     1. 想去哪家公司就访哪家
@@ -99,6 +111,8 @@
     4. React.lazy 延迟按需（切换路由）加载
         `const HomeDetail = lazy(() => import('./pages/HomeDetail'))`
             非首页 其他页面级别路由应采用按需加载
+    5. 延迟加载组件，要为其提供Suspense
+        react 提供一个组件，在还没有加载js 组件前，可以先用fallback 提供加载等待，增强界面友好度
 
 - antd-mobile 
     antd 的移动版 手机版
@@ -130,6 +144,22 @@
         以一个组件引入
     3. 精简首页，方便管理
         layout 没有污染首页
+
+- 当组件深度比较大时
+    相对路径变得复杂
+    工程化 vite 支持
+        vite.config.js 配置 路径别名
+    resolve: {
+        alias: {
+        // "@": "/src" 第二种写法
+        "@": path.resolve(__dirname, 'src')
+        // __dirname  物理路径，根目录地址
+        }
+    }
+
+- NavLink 比Link 更专业
+    比如要给激活路由（active）添加样式时
+    二级路由里，使用useEffect + NavLink
 
 
 ##  Link组件自动创建a标签，附带histroy功能

@@ -1,37 +1,38 @@
-// 独立路由配置
+// 独立配置文件，路由配置
 import React from 'react'
 import { lazy } from 'react'
-import { Routes, Route, Link } from 'react-router-dom'
+import { Routes, Route } from 'react-router-dom'
 import Home from '../pages/Home'
-// 推迟加载、运行，按需加载
-// 路由切换到homedetail 后，再加载
-const Order = lazy(() => import('../pages/Order'))
-const Find = lazy(() => import('../pages/Find'))
-const Mine = lazy(() => import('../pages/Mine'))
+// import HomeDetail from '../pages/HomeDetail'
+// 这样import浪费资源，影响首页速度，应该不点击就不会加载（推迟加载），切换到路由后加载
+// import HomeDetail from './pages/HomeDetail'
 const HomeDetail = lazy(() => import('../pages/HomeDetail'))
 const Cities = lazy(() => import('../pages/Cities'))
+const Mine = lazy(() => import('../pages/Mine'))
+const Find = lazy(() => import('../pages/Find'))
+const Order = lazy(() => import('../pages/Order'))
 const HomeOrder = lazy(() => import('../pages/HomeDetail/HomeOrder'))
 const HomeComment = lazy(() => import('../pages/HomeDetail/HomeComment'))
 const HomeBussiness = lazy(() => import('../pages/HomeDetail/HomeBussiness'))
 
 
-// 不能和Routes（react-router-dom）同名
+
 export default function RoutesConfig() {
     return (
         <Routes>
-            <Route path="/" element={<Home />}> </Route>
-            <Route path="/home" element={<Home />}> </Route>
-            <Route path="/find" element={<Find />}> </Route>
-            <Route path="/order" element={<Order />}> </Route>
-            <Route path="/mine" element={<Mine />}> </Route>
-            <Route path="/cities" element={<Cities />}> </Route>
-            <Route path="/homedetail" element={<HomeDetail />}>
+            <Route path='/' element={<Home />}></Route>
+            <Route path='/home' element={<Home />}></Route>
+            <Route path='/order' element={<Order />}></Route>
+            <Route path='/find' element={<Find />}></Route>
+            <Route path='/mine' element={<Mine />}></Route>
+            <Route path='/cities' element={<Cities />}></Route>
+            {/* <Route path='/homedetail/' element={<HomeDetail />}> */}
+            <Route path='/homedetail/:id' element={<HomeDetail />}>
+                {/* 二级路由 Children */}
                 <Route path='/homedetail/:id/order' element={<HomeOrder />}></Route>
                 <Route path='/homedetail/:id/comment' element={<HomeComment />}></Route>
                 <Route path='/homedetail/:id/bussiness' element={<HomeBussiness />}></Route>
             </Route>
-            {/* 二级路由 */}
         </Routes>
     )
 }
-
